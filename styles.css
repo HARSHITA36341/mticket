@@ -1,0 +1,199 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(to bottom, #000000, black
+  );
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Header Styling */
+.main-header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 20px;
+  padding: 30px 20px;
+  text-align: left;
+}
+
+h1 {
+  font-size: 2em;
+  color: #ffffff;
+}
+
+h2 {
+  font-size: 1.5em;
+  color: #ff3c3c;
+  margin-top: 10px;
+}
+
+p {
+  font-size: 0.9em;
+  margin: 10px 0 20px;
+  color: #ccc;
+}
+
+/* Button */
+button {
+  background-color: #ff3c3c;
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 25px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+button:hover {
+  background-color: #cc2f2f;
+}
+
+.flip-container {
+  width: 300px;
+  height: 300px;
+  perspective: 1000px;
+  margin: 20px auto;
+}
+
+/* Inner flipping element */
+.flipper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+/* Flip on hover */
+.flip-container:hover .flipper {
+  transform: rotateY(180deg);
+}
+
+/* Front and back faces */
+.front, .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid #ff3c3c;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.front img,
+.back img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Back side flipped */
+.back {
+  transform: rotateY(180deg);
+}
+
+/* Footer */
+footer {
+  margin-top: 30px;
+}
+
+.tags span {
+  display: inline-block;
+  background: #333;
+  border-radius: 20px;
+  padding: 8px 15px;
+  margin: 5px;
+  font-size: 0.9em;
+  color: #fff;
+}
+
+/* Logo image */
+.logo {
+  width: 100px;
+  height: auto;
+  margin-top: -10px;     /* Moves logo upward */
+  align-self: flex-start; /* Aligns logo to the top of the header */
+}
+
+/* Header text next to logo */
+.header-text {
+  flex-grow: 1;
+}
+
+/* Top Navigation Bar */
+.top-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* logo left, options right */
+  padding: 15px 20px;
+  background-color: black;
+  border-bottom: 1px solid black;
+}
+
+.nav-options {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* Optional styles for search box, links, and logout button */
+.search-box {
+  padding: 6px 12px;
+  border-radius: 20px;
+  border: none;
+  font-size: 0.9em;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  font-size: 0.95em;
+  padding: 6px 12px;
+  border-radius: 20px;
+  background-color: #333;
+  transition: background 0.3s ease;
+}
+
+.nav-link:hover {
+  background-color: #444;
+}
+
+.logout-btn {
+  background-color: #ff3c3c;
+  color: white;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.9em;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.logout-btn:hover {
+  background-color: #cc2f2f;
+}
+
+/* Responsive header layout */
+@media (max-width: 600px) {
+  .main-header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .logo {
+    width: 114px;
+    height: 42px;
+    margin-top: -10px;
+    align-self: flex-start;
+  }
+}
